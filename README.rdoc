@@ -2,6 +2,13 @@
 
 simple example of converting TUIO data into midi commands. every TUIO object represents a knob that sends midi cc messages.  My ultimate goal is to provide an easy way to manipulate Ableton Live with TUIO data.
 
+== Notes
+
+i've built in midiator, rbcoremidi, and tuio-ruby into this project.  here are there respective urls:
+  * http://github.com/bleything/midiator/tree/master
+  * http://github.com/gilesbowkett/rbcoremidi/tree/master
+  * http://github.com/aberant/tuio-ruby/tree/master
+
 == Copyright
 
 Copyright (c) 2009 Colin Harris. See LICENSE for details.
