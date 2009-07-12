@@ -1,7 +1,7 @@
 = tuio-midi-knobs
 
-simple example of converting tuio data into midi commands. every tuio object represents a knob that sends midi cc messages.
+simple example of converting TUIO data into midi commands. every TUIO object represents a knob that sends midi cc messages.  My ultimate goal is to provide an easy way to manipulate Ableton Live with TUIO data.
 
 == Copyright
 
-Copyright (c) 2009 aberant. See LICENSE for details.
+Copyright (c) 2009 Colin Harris. See LICENSE for details.
