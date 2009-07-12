@@ -4,10 +4,10 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "live-interface"
+    gem.name = "tuio-midi-knobs"
     gem.summary = %Q{TODO}
     gem.email = "qzzzq1@gmail.com"
-    gem.homepage = "http://github.com/aberant/live-interface"
+    gem.homepage = "http://github.com/aberant/tuio-midi-knobs"
     gem.authors = ["aberant"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
@@ -18,7 +18,7 @@ end
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = 'live-interface'
+  rdoc.title = 'tuio-midi-knobs'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')

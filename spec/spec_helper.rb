@@ -3,11 +3,10 @@ require 'spec'
 require 'rr'
 
 
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'live_interface'
-require 'live_interface/clip'
-# require 'live_interface/midi_interface'
+$LOAD_PATH.unshift( File.dirname( __FILE__ ))
+$LOAD_PATH.unshift( File.join( File.dirname( __FILE__ ), '..', 'lib' ))
+
+require 'tuio_midi_knobs'
 
 Spec::Runner.configure do |config|
     config.mock_with RR::Adapters::Rspec
@@ -20,10 +19,10 @@ end
 
 def setup_server
   mock( socket = Object.new )
-
+  
   # stub out networking
-  stub(socket).bind("", 3333)
-  stub(UDPSocket).new { socket }
+  stub( socket ).bind("", 3333)
+  stub( UDPSocket ).new { socket }
 
   TuioClient.new
 end

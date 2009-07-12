@@ -19,7 +19,7 @@ describe TuioObjectController do
   it "updates knob objects after they are created" do
     knob = Object.new
     mock( Knob ).new( 42 ).returns( knob )
-    mock( knob ).update( 1 )
+    mock( knob ).move( 1 )
     
     @controller.create_event( @tuio_object )
     

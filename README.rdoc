@@ -1,6 +1,6 @@
-= live-interface
+= tuio-midi-knobs
 
-Description goes here.
+simple example of converting tuio data into midi commands. every tuio object represents a knob that sends midi cc messages.
 
 == Copyright
 
