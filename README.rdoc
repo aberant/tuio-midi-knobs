@@ -10,7 +10,7 @@ run the project by executing bin/tuio_knobs
 
 == Notes
 
-i've built in midiator[http://github.com/bleything/midiator/tree/master], rbcoremidi[http://github.com/gilesbowkett/rbcoremidi/tree/master], and tuio-ruby[http://github.com/aberant/tuio-ruby/tree/master] into this project.  
+i've built in midiator[http://github.com/bleything/midiator/tree/master] and tuio-ruby[http://github.com/aberant/tuio-ruby/tree/master] into this project.  
 
 == Copyright
 
