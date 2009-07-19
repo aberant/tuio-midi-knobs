@@ -3,7 +3,9 @@
 simple example of converting TUIO data into midi commands. every TUIO object represents a knob that sends midi cc messages.  My ultimate goal is to provide an easy way to manipulate Ableton Live with TUIO data.
 
 == Using
-
+requires osc gem
+    sudo gem install osc
+    
 run the project by executing bin/tuio_knobs
 
 == Notes
