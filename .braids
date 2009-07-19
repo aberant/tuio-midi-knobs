@@ -1,15 +1,8 @@
 --- 
-lib/rbcoremidi: 
-  squashed: true
-  url: git://github.com/gilesbowkett/rbcoremidi.git
-  type: git
-  revision: ca3fa0954f3064d92b68df94e7e597e34f95009b
-  branch: master
-  remote: braid/lib/rbcoremidi
 lib/midiator: 
   squashed: true
-  url: git://github.com/bleything/midiator.git
   type: git
+  url: git://github.com/bleything/midiator.git
   revision: 3463551e7b3513e6202ea1013513f85c79aa6a9b
   branch: master
   remote: braid/lib/midiator
