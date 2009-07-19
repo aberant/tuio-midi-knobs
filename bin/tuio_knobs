@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+$:.unshift( File.join( File.dirname( __FILE__ ), '..', 'lib') )
+
+require 'tuio_midi_knobs'
+
+puts "starting midi knobs..."
+TuioMidiKnobs.new.start
+puts "running midi knobs..."
+sleep

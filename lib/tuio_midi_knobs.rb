@@ -1,6 +1,6 @@
 $:.unshift File.join( File.dirname( __FILE__ ), '.')
 $:.unshift File.join( File.dirname( __FILE__ ), 'midiator', 'lib' )
-$:.unshift File.join( File.dirname( __FILE__ ), 'tuio-ruby-0.2.0')
+$:.unshift File.join( File.dirname( __FILE__ ), 'tuio-ruby-0.2.0', 'lib')
  
 require 'midiator'
 require 'tuio_midi_knobs/midi_interface'
@@ -28,7 +28,6 @@ class TuioMidiKnobs
   def start
     Thread.new do
       @tc.start
-      sleep
     end
   end
 end
