@@ -1,18 +1,41 @@
 require 'rubygems'
 require 'rake'
 
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "tuio-midi-knobs"
-    gem.summary = %Q{TODO}
-    gem.email = "qzzzq1@gmail.com"
-    gem.homepage = "http://github.com/aberant/tuio-midi-knobs"
-    gem.authors = ["aberant"]
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
-rescue LoadError
-  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
+require 'rake/packagetask'
+require 'rake/gempackagetask'
+
+### Task: gem
+gemspec = Gem::Specification.new do |gem|
+  gem.name      = "tuio-midi-knobs"
+  gem.version   = File.read('VERSION')
+
+  gem.summary = %Q{converts TUIO data to MIDI CC messages}
+  gem.description = %Q{converts TUIO data to MIDI CC messages using a simple knob metaphor}
+
+  gem.authors  = ["aberant"]
+  gem.email    = "qzzzq1@gmail.com"
+  gem.homepage = "http://github.com/aberant/tuio-midi-knobs"
+
+  gem.rubyforge_project = 'tuio-midi-knobs'
+
+  gem.has_rdoc = true
+  gem.extra_rdoc_files = ["README.rdoc", "LICENSE"]
+  gem.rdoc_options = ["--inline-source", "--charset=UTF-8"]
+  gem.files        = FileList['Rakefile', 'README.rdoc', 'VERSION', 'examples/**/*', 'lib/**/*'].to_a
+  gem.test_files   = FileList['spec/**/*.rb']
+
+  gem.default_executable = %q{tuio_knobs}
+
+  gem.add_dependency 'midiator', [">= 0.3.2"]
+  gem.add_dependency 'tuio-ruby', [">= 0.2.5"]
+end
+
+Rake::GemPackageTask.new( gemspec ) do |task|
+  task.gem_spec = gemspec
+  task.need_tar = false
+  task.need_tar_gz = true
+  task.need_tar_bz2 = true
+  task.need_zip = true
 end
 
 require 'rake/rdoctask'
@@ -35,6 +58,5 @@ Spec::Rake::SpecTask.new(:rcov) do |spec|
   spec.pattern = 'spec/**/*_spec.rb'
   spec.rcov = true
 end
-
 
 task :default => :spec

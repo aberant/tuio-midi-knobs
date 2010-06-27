@@ -1,28 +1,21 @@
 require 'rubygems'
 require 'spec'
-require 'rr'
-
-
-$LOAD_PATH.unshift( File.dirname( __FILE__ ))
-$LOAD_PATH.unshift( File.join( File.dirname( __FILE__ ), '..', 'lib' ))
 
 require 'tuio_midi_knobs'
 
-Spec::Runner.configure do |config|
-    config.mock_with RR::Adapters::Rspec
-end
-
 def setup_midi
   @midi = Object.new
-  stub( MidiInterface ).driver.returns( @midi )
+  MidiInterface.stub!(:driver).and_return( @midi )
 end
 
 def setup_server
-  mock( socket = Object.new )
-  
-  # stub out networking
-  stub( socket ).bind("", 3333)
-  stub( UDPSocket ).new { socket }
+  socket = mock( "socket" )
 
-  TuioClient.new
+  # stub out networking
+  socket.stub!(:bind).with("", 3333)
+
+  UDPSocket.stub!(:new).and_return( socket )
+
+  # UDPSocket.new.bind( "", 3333 )
+  @server = TuioClient.new
 end

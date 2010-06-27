@@ -1,14 +1,9 @@
-$:.unshift File.join( File.dirname( __FILE__ ), '.')
-$:.unshift File.join( File.dirname( __FILE__ ), 'midiator', 'lib' )
-
 require 'midiator'
 require 'tuio_midi_knobs/midi_interface'
 require 'tuio_midi_knobs/tuio_object_controller'
 require 'tuio_midi_knobs/knob'
 
-
 require 'tuio-ruby'
-
 
 class TuioMidiKnobs
   def initialize

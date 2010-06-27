@@ -4,19 +4,19 @@ describe Knob do
   before :each do
     setup_midi
   end
-  
+
   it "has an identifier" do
     Knob.new( 42 ).knob_id.should == 42
   end
-  
+
   it "generates midi commands based on it's id and the angle provided in radians" do
     @knob = Knob.new( 42 )
-    mock( @midi ).control_change( 42, Knob::MIDI_CHANNEL, 31 )
-    
+    @midi.should_receive(:control_change).with( 42, Knob::MIDI_CHANNEL, 31 )
+
     # 90 degrees
     @knob.move( 1.57079633 )
   end
-  
-  
-  
+
+
+
 end
