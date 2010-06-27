@@ -1,8 +1,0 @@
---- 
-lib/midiator: 
-  squashed: true
-  type: git
-  url: git://github.com/bleything/midiator.git
-  revision: 3463551e7b3513e6202ea1013513f85c79aa6a9b
-  branch: master
-  remote: braid/lib/midiator
